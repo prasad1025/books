@@ -47,16 +47,19 @@ public class BookController {
 
 	@PatchMapping("/books/{id}")
 	public Book updateBook(@PathVariable("id") long id, @RequestBody Book book) {
+		logger.info("Inside updateBook");
 		return bookService.updateBook(id, book);
 	}
 
 	@PostMapping("/books")
 	public Book addBook(@RequestBody Book book) {
+		logger.info("Inside addBook");
 		return bookService.saveBook(book);
 	}
 
 	@DeleteMapping("/books/{id}")
 	public void deleteBook(@PathVariable("id") long id) {
+		logger.info("Inside deleteBook");
 		bookService.deleteBook(id);
 	}
 
