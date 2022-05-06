@@ -38,7 +38,7 @@ public class BookController {
 
 		Optional<Book> bookOpt = bookService.getBookById(id);
 
-		if (!bookOpt.isEmpty()) {
+		if (bookOpt.isPresent()) {
 			book = bookOpt.get();
 		}
 
